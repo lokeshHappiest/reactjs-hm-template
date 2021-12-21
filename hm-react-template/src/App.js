@@ -1,23 +1,24 @@
-import { LogsContainer } from "./logs/LogsContainer";
-import { Provider } from "react-redux";
-import Counter from "./components/Counter";
-import User from "./components/User";
-import "./App.css";
-import store from "./redux/root";
-import CreateNote from "./components/CreateNote";
+import SButton from "./components/SButton";
+import { useFetch } from "./hooks/useFetch";
+import { useState } from "react";
 
-function App() {
+export default function App() {
+  const [url, setUrl] = useState("http://localhost:3000/notes");
+  const { data, isPending, error } = useFetch(url);
+
   return (
-    <Provider store={store}>
-      <div className="App">
-        Hello World
-        <LogsContainer />
-        <Counter />
-        <User />
-        <CreateNote />
-      </div>
-    </Provider>
+    <div>
+      {isPending && <div>Loading...</div>}
+      {error && <div>{error}</div>}
+      {data && data.map((d) => <div key={d.id}>{d.title}</div>)}
+      <SButton
+        title="Fetch All Data"
+        onClick={() => setUrl("http://localhost:3000/notes")}
+      />
+      <SButton
+        title="Fetch Work Data"
+        onClick={() => setUrl("http://localhost:3000/notes?category=work")}
+      />
+    </div>
   );
 }
-
-export default App;

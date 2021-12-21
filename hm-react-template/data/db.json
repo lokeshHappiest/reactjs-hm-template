@@ -35,6 +35,12 @@
       "detail": "hksfh kjhfkjsd kfksdhfkj lkkhsjf lkjflasjf lkjlkjf ",
       "category": "reminders",
       "id": 6
+    },
+    {
+      "title": "pay room rent",
+      "details": " blah blah blah",
+      "category": "work",
+      "id": 7
     }
   ]
 }
