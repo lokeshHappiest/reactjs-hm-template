@@ -1,0 +1,30 @@
+div {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: #b60e0e;
+  border: 9px solid #a6a2a2;
+  box-shadow: 2px 2px 44px 12px rgba(145, 141, 141, 0.51);
+  border-radius: 46px;
+}
+
+p {
+  position: absolute;
+  width: 217px;
+  height: 45px;
+  left: calc(50% - 217px / 2);
+  top: calc(50% - 45px / 2 + 0.5px);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 94.69%;
+  /* or 45px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #fff9f9;
+}
